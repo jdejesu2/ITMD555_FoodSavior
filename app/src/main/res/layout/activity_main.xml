@@ -10,28 +10,35 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome! Search and Eat! "
+        android:text="Save Food Today!"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="100dp"
+        android:textSize="51sp"/>
 
     <Button
     android:id="@+id/button1"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+        android:layout_width="300dp"
+    android:layout_height="100dp"
     android:layout_below="@+id/textView"
     android:layout_centerVertical="true"
     android:layout_centerHorizontal="true"
     android:layout_marginTop="100dp"
-    android:text="Fridge Items" />
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+    android:text="Fridge Items"
+        android:background="@drawable/btn_rounded"/>
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/button1"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:text="Search Recipes" />
+        android:text="Search Recipes"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:background="@drawable/btn_rounded"/>
 
 </RelativeLayout>

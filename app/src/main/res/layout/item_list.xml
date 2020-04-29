@@ -4,24 +4,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/item_title"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:hint="Title of Food"
         android:text="Food"
         android:textSize = "20sp"
+        android:inputType="none"
+        android:enabled="false"
         />
 
-    <Button
+    <EditText
+        android:id="@+id/item_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/item_title"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="2dp"
+        android:hint="Amount of Food"
+        android:text="Food amount"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+
+    <Button
         android:id="@+id/task_delete"
-        android:layout_alignParentRight="true"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:onClick="deleteItem"
-        android:text="Delete"
-        />
+        android:textColor="#FFFFFF"
+        android:text="X"
+        android:background="@drawable/btn_rounded_delete"/>
+
 
 </RelativeLayout>

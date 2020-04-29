@@ -1,8 +1,9 @@
-package com.example.quotes;
+package com.example.foodsavior;
 
 import android.content.Intent;
-import android.os.Handler;
 import android.os.Bundle;
+import android.os.Handler;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreen extends AppCompatActivity {
@@ -16,7 +17,7 @@ public class SplashScreen extends AppCompatActivity {
 
             @Override
             public void run() {
-                Intent i = new Intent(SplashScreen.this, QuoteReaderActivity.class);
+                Intent i = new Intent(SplashScreen.this, MainActivity.class);
                 startActivity(i);
                 finish();
             }

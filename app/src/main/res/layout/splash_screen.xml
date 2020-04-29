@@ -7,8 +7,7 @@
         android:id="@+id/splashscreen"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        android:background= "#43464b"
         android:layout_gravity="center"
-        android:src="@drawable/splash_img" />
+        android:src="@drawable/logo" />
 
 </LinearLayout>

@@ -4,20 +4,21 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/app"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Recipes"></activity>
-        <activity android:name=".Items" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.foodsavior.SplashScreen"
+            android:label="FoodSavior">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.foodsavior.MainActivity" />
+        <activity android:name=".Recipes"></activity>
+        <activity android:name=".Items" />
     </application>
 
 </manifest>
