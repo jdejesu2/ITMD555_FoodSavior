@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openRecipes () {
 
-        Intent intent = new Intent(this, Recipes.class);
+        Intent intent = new Intent(this, MainJSON.class);
         startActivity(intent);
     }
 }
