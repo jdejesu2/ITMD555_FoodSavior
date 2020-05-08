@@ -8,25 +8,26 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save Food Today!"
+        android:layout_width="333dp"
+        android:layout_height="175dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:textSize="51sp"/>
+        android:fontFamily="@font/autour_one"
+        android:text="Save Your Food Today!"
+        android:textSize="45sp" />
 
     <Button
-    android:id="@+id/button1"
+        android:id="@+id/button1"
         android:layout_width="300dp"
-    android:layout_height="100dp"
-    android:layout_below="@+id/textView"
-    android:layout_centerVertical="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="58dp"
+        android:background="@drawable/btn_rounded"
+        android:fontFamily="@font/autour_one"
+        android:text="Fridge Items"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
-    android:text="Fridge Items"
-        android:background="@drawable/btn_rounded"/>
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/button2"
@@ -35,6 +36,7 @@
         android:layout_below="@+id/button1"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:fontFamily="@font/autour_one"
         android:layout_marginTop="10dp"
         android:text="Search Recipes"
         android:textColor="#FFFFFF"

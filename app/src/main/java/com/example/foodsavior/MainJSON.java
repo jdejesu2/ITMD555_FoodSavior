@@ -6,9 +6,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Filter;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -19,6 +23,7 @@ import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.DecimalFormat;
@@ -29,6 +34,12 @@ public class MainJSON extends AppCompatActivity {
 
     private ListView recipes;
 
+    private EditText filter;
+
+    private CustomAdapter jsonCustomAdapter;
+
+    private List<ItemObject> jsonObject;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +49,9 @@ public class MainJSON extends AppCompatActivity {
         recipes = findViewById(R.id.listView);
 
 
-        recipes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        //show additonal details of the Recipes from the data
+        //retrieved from JSON
+        /*recipes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             //setting an item click listener and every time an item is clicked we
             //create an Intent!
@@ -50,7 +63,7 @@ public class MainJSON extends AppCompatActivity {
                 i.putExtra("position", position);
                 startActivity(i);
             }
-        });
+        }); */
 
         new AsynDataClass().execute();
 
@@ -88,6 +101,9 @@ public class MainJSON extends AppCompatActivity {
                 urlConnection.disconnect();
             }
             return jsonResult.toString();
+
+
+
         }
 
         @Override
@@ -99,17 +115,46 @@ public class MainJSON extends AppCompatActivity {
             //parsing the data from the server
             //taking the result and setting them ItemObject
             List<ItemObject> parsedObject = returnParsedJsonObject(result);
-            CustomAdapter jsonCustomAdapter = new CustomAdapter(MainJSON.this, parsedObject);
+            jsonCustomAdapter = new CustomAdapter(MainJSON.this, parsedObject);
             recipes.setAdapter(jsonCustomAdapter);
+
+
+            //Applying filter to any changes made edit text, to redefine the adapter
+            /*filter = findViewById(R.id.searchFilter);
+            filter.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    //(MainJSON.this).jsonCustomAdapter.getFilter().filter(charsquence);
+                    //MainJSON.this.jsonCustomAdapter
+
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });*/
+
         }
 
     }
     private List<ItemObject> returnParsedJsonObject(String result){
 
-        List<ItemObject> jsonObject = new ArrayList<ItemObject>();
+        jsonObject = new ArrayList<ItemObject>();
+
+        /*Intent intent = new Intent(this,CustomAdapter.class);
+        intent.putExtra("LIST", (Serializable) jsonObject);
+        startActivity(intent);*/
+
         JSONObject resultObject = null;
         JSONArray jsonArray = null;
         ItemObject newItemObject = null; //interior object holder
+
 
         try {
             resultObject = new JSONObject(result);
@@ -145,6 +190,38 @@ public class MainJSON extends AppCompatActivity {
 
 
         return jsonObject;
+
     }
+
+
+    //Customer filter need to do thorough JSON data
+    //to read through the names of the items
+    /*private class ValueFilter extends Filter {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            FilterResults results = new FilterResults();
+            if (constraint != null && constraint.length() > 0) {
+                for (int i = 0; i < jsonObject.size(); i++) {
+                    if ((jsonObject.get(i).getName().toUpperCase())
+                            .contains(constraint.toString().toUpperCase()))
+                    {
+
+                    }
+                }
+                results.count = filterList.size();
+                results.values = filterList;
+            } else {
+                results.count = mStringFilterList.size();
+                results.values = mStringFilterList;
+            }
+            return results;
+        }
+        @Override
+        protected void publishResults(CharSequence constraint,
+                                      FilterResults results) {
+            babylist = (ArrayList<BabyDetailsData>) results.values;
+            notifyDataSetChanged();
+        }
+    }*/
 }
 

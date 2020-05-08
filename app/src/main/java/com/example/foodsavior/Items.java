@@ -52,14 +52,13 @@ public class Items extends AppCompatActivity {
                         StringBuffer buffer = new StringBuffer();
 
                         while (res.moveToNext()) { //cycle thru result set
-                            buffer.append("Item ID:" + res.getString(0) + "\n");
                             buffer.append("Name :" + res.getString(1) + "\n");
-                            buffer.append("Amount :" + res.getString(2) + "\n\n");
+                            buffer.append("Details :" + res.getString(2) + "\n\n");
 
                         }
                         // Show all data
 
-                        showMessage("Data", buffer.toString());
+                        showMessage("Virtual Fridge List", buffer.toString());
 
                         Log.i("Data", buffer.toString());
                         Log.i("Data", "All Data records");

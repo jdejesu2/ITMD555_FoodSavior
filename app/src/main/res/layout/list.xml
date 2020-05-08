@@ -12,7 +12,9 @@
         android:layout_marginRight="10dp"
         android:textColor="#000000"
         android:text="name"
-        android:textSize="18dp"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/autour_one"
         />
 
     <TextView
@@ -24,8 +26,6 @@
         android:layout_alignLeft="@+id/textView"
         android:layout_marginTop="20dp"
         android:text="instructions"
-        android:singleLine="true"
-        android:ellipsize="end"
         android:textColor="#000000" />
 
 </RelativeLayout>

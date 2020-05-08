@@ -12,9 +12,12 @@
         android:layout_alignParentStart="true"
         android:hint="Title of Food"
         android:text="Food"
-        android:textSize = "20sp"
+        android:textSize = "25sp"
         android:inputType="none"
         android:enabled="false"
+        android:background="@null"
+        android:textColor="#000000"
+        android:fontFamily="@font/autour_one"
         />
 
     <EditText
@@ -24,7 +27,11 @@
         android:layout_below="@+id/item_title"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="2dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="13dp"
+        android:fontFamily="@font/autour_one"
+        android:background="@null"
         android:hint="Amount of Food"
         android:text="Food amount"
         android:textSize="20sp"
@@ -34,14 +41,17 @@
         android:id="@+id/task_delete"
         android:layout_width="50dp"
         android:layout_height="40dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/btn_rounded_delete"
         android:onClick="deleteItem"
-        android:textColor="#FFFFFF"
+        android:fontFamily="@font/autour_one"
         android:text="X"
-        android:background="@drawable/btn_rounded_delete"/>
+        android:textColor="#FFFFFF" />
 
 
 </RelativeLayout>
