@@ -48,6 +48,11 @@ public class CustomAdapter extends BaseAdapter {
                     false);
         }
 
+        if (position % 2 == 1) {
+            convertView.setBackgroundColor(Color.rgb(248,248,255));
+        } else {
+            convertView.setBackgroundColor(Color.WHITE);
+        }
 
         name = convertView.findViewById(R.id.textView);
         instructions = convertView.findViewById(R.id.textView2);
